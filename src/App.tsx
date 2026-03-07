@@ -240,7 +240,7 @@ export default function App() {
             <div className={`relative flex-1 bg-white rounded-[32px] pointer-events-auto overflow-y-auto overflow-x-hidden lg:ml-3 transition-all duration-400 ease-out ${showAbout ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
               <div className="flex min-h-full">
                 <div className="w-px bg-[#f4efe3] shrink-0 my-8 hidden lg:block" />
-                <div className="flex flex-col gap-10 px-6 lg:px-12 pb-12 lg:pr-6 pt-8 flex-1">
+                <div className="flex flex-col gap-10 px-6 lg:px-12 pb-12 lg:pr-6 pt-4 lg:pt-8 flex-1">
                   <button
                     onClick={closeAbout}
                     className="sticky top-6 self-end bg-[#f4efe3] flex items-center justify-center w-12 h-12 rounded-full border-none cursor-pointer hover:opacity-70 transition-opacity z-10 shrink-0"
@@ -270,21 +270,19 @@ export default function App() {
                   </div>
                   <div className="flex flex-col gap-5">
                     <p className="font-[Bricolage_Grotesque] font-bold text-[#2a2c24] text-2xl leading-tight">Random facts about me</p>
-                    <div className="bg-[#2a2c24] rounded-[24px] p-8 flex flex-col gap-6">
-                      <div className="flex items-start justify-between gap-4 w-full">
-                        <div className="flex flex-col gap-2 flex-1 min-w-0">
-                          <p className="font-[Bricolage_Grotesque] font-bold text-white text-xl leading-tight">{facts[factIndex].title}</p>
-                          <p className="font-[Inter] text-[#d3c6a5] text-base leading-6">
-                            {facts[factIndex].body}
-                            {facts[factIndex].link && (
-                              <a href={facts[factIndex].link} target="_blank" rel="noopener noreferrer" className="ml-1 text-[#f4efe3] font-semibold hover:opacity-70 transition-opacity">{facts[factIndex].linkLabel ?? 'grotepodcastlas.nl →'}</a>
-                            )}
-                          </p>
-                        </div>
+                    <div className="bg-[#2a2c24] rounded-[24px] p-8 flex flex-col gap-4">
+                      <div className="flex items-center justify-between gap-4 w-full">
+                        <p className="font-[Bricolage_Grotesque] font-bold text-white text-xl leading-tight flex-1 min-w-0">{facts[factIndex].title}</p>
                         <div className="bg-white rounded-full w-14 h-14 flex items-center justify-center shrink-0 text-2xl">
                           {facts[factIndex].emoji}
                         </div>
                       </div>
+                      <p className="font-[Inter] text-[#d3c6a5] text-base leading-6">
+                        {facts[factIndex].body}
+                        {facts[factIndex].link && (
+                          <a href={facts[factIndex].link} target="_blank" rel="noopener noreferrer" className="ml-1 text-[#f4efe3] font-semibold hover:opacity-70 transition-opacity">{facts[factIndex].linkLabel ?? 'grotepodcastlas.nl →'}</a>
+                        )}
+                      </p>
                       <button onClick={regenerateFact} className="bg-[#f4efe3] flex gap-2 items-center justify-center px-4 py-2.5 rounded-full w-full cursor-pointer border-none hover:opacity-80 transition-opacity">
                         <span className="font-[Bricolage_Grotesque] font-bold text-[#2a2c24] text-base leading-tight">Regenerate</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
