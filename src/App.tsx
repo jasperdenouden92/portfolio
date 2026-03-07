@@ -234,28 +234,18 @@ export default function App() {
           <div className="fixed inset-3 z-50 flex items-stretch pointer-events-none">
             <div className="hidden lg:block w-[360px] shrink-0" />
             <div className={`relative flex-1 bg-white rounded-[32px] pointer-events-auto overflow-y-auto lg:ml-3 transition-all duration-400 ease-out ${showAbout ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
-              {/* Mobile close button - absolute over content */}
-              <button
-                onClick={closeAbout}
-                className="lg:hidden absolute top-6 right-6 z-10 bg-[#f4efe3] flex items-center justify-center w-12 h-12 rounded-full border-none cursor-pointer hover:opacity-70 transition-opacity"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M18 6L6 18M6 6l12 12" stroke="#2a2c24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
               <div className="flex min-h-full">
                 <div className="w-px bg-[#f4efe3] shrink-0 my-8 hidden lg:block" />
                 <div className="flex flex-col gap-10 px-6 lg:px-12 pb-12 lg:pr-6 pt-8 flex-1">
-                  {/* Desktop sticky close button */}
                   <button
                     onClick={closeAbout}
-                    className="hidden lg:flex sticky top-6 self-end bg-[#f4efe3] items-center justify-center w-12 h-12 rounded-full border-none cursor-pointer hover:opacity-70 transition-opacity z-10 shrink-0"
+                    className="sticky top-6 self-end bg-[#f4efe3] flex items-center justify-center w-12 h-12 rounded-full border-none cursor-pointer hover:opacity-70 transition-opacity z-10 shrink-0"
                   >
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                       <path d="M18 6L6 18M6 6l12 12" stroke="#2a2c24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </button>
-                  <div className="flex flex-col gap-10 lg:pr-16 lg:-mt-[72px] lg:pt-[72px]">
+                  <div className="flex flex-col gap-10 lg:pr-16 mt-4 lg:-mt-[72px] lg:pt-[72px]">
                   <div className="flex flex-col gap-3">
                     <p className="font-[Bricolage_Grotesque] font-bold text-[#2a2c24] text-2xl leading-tight">About me</p>
                     <p className="font-[Inter] text-[#2a2c24] text-lg leading-7">
