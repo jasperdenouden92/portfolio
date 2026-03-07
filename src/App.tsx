@@ -167,7 +167,11 @@ export default function App() {
     return () => { document.body.style.overflow = '' }
   }, [aboutMounted])
 
-  const regenerateFact = () => setFactIndex(i => (i + 1) % facts.length)
+  const regenerateFact = () => {
+    let next
+    do { next = Math.floor(Math.random() * facts.length) } while (next === factIndex)
+    setFactIndex(next)
+  }
 
   return (
     <div className="min-h-screen bg-[#f4efe3] p-3">
