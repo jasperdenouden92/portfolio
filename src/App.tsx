@@ -298,7 +298,7 @@ export default function App() {
         )}
 
         {/* Main content */}
-        <div className={`flex flex-1 flex-col gap-3 min-w-0 transition-opacity duration-200 ${aboutMounted ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <div className={`flex flex-1 flex-col gap-3 min-w-0 w-full transition-opacity duration-200 ${aboutMounted ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
 
           {/* Hero + skills */}
           <div className="animate-fade-up-1 flex flex-col w-full">
