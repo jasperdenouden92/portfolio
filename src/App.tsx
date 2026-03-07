@@ -170,7 +170,7 @@ export default function App() {
   const regenerateFact = () => setFactIndex(i => (i + 1) % facts.length)
 
   return (
-    <div className="min-h-screen bg-[#f4efe3] p-3">
+    <div className="min-h-screen bg-[#f4efe3] p-3 overflow-x-hidden">
       <div className="flex flex-col lg:flex-row gap-3 items-start w-full">
 
         {/* Sidebar Card */}
