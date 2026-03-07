@@ -178,7 +178,7 @@ export default function App() {
           <div className="flex items-start justify-center w-full">
             <div className="w-20 h-20 rounded-full overflow-hidden shrink-0 bg-[#2a2c24]">
               <img
-                src="https://www.figma.com/api/mcp/asset/40237395-54f8-4c3c-89ec-09e732e4f5cd"
+                src="/assets/avatar.png"
                 alt="Jasper den Ouden"
                 className="w-full h-full object-cover"
               />
@@ -200,13 +200,13 @@ export default function App() {
           {/* Social buttons */}
           <div className="flex gap-4 items-center py-1.5">
             <a href="https://www.linkedin.com/in/jasperdenouden/" target="_blank" rel="noopener noreferrer" className="shrink-0 hover:opacity-80 transition-opacity">
-              <img src="https://www.figma.com/api/mcp/asset/1fd6e8cd-8339-4104-aafb-fade20775760" alt="LinkedIn" className="w-10 h-10" />
+              <img src="/assets/linkedin.svg" alt="LinkedIn" className="w-10 h-10" />
             </a>
             <a href="https://www.instagram.com/jasperdenouden" target="_blank" rel="noopener noreferrer" className="bg-[#f4efe3] flex items-center justify-center rounded-full w-10 h-10 shrink-0 hover:opacity-80 transition-opacity">
-              <img src="https://www.figma.com/api/mcp/asset/34698b69-d7b2-46e9-b575-9f892f00e9a6" alt="Instagram" className="w-5 h-5" />
+              <img src="/assets/instagram.svg" alt="Instagram" className="w-5 h-5" />
             </a>
             <a href="mailto:hello@jasperdenouden.com" className="bg-[#f4efe3] flex items-center justify-center rounded-full w-10 h-10 shrink-0 hover:opacity-80 transition-opacity">
-              <img src="https://www.figma.com/api/mcp/asset/5f003994-6613-479e-a15e-467496cf2af3" alt="Email" className="w-5 h-5" />
+              <img src="/assets/email.svg" alt="Email" className="w-5 h-5" />
             </a>
           </div>
 
@@ -372,10 +372,10 @@ export default function App() {
           {/* Images row */}
           <div className="animate-fade-up-2 flex flex-col md:flex-row gap-3 w-full">
             <div className="relative rounded-[32px] overflow-hidden h-[280px] md:h-[380px] md:flex-1">
-              <img src="https://www.figma.com/api/mcp/asset/4be6c8ac-de5a-459a-82fe-091dae3a2105" alt="" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="/assets/photo1.png" alt="" className="absolute inset-0 w-full h-full object-cover" />
             </div>
             <div className="relative rounded-[32px] overflow-hidden h-[280px] md:h-[380px] md:flex-1">
-              <img src="https://www.figma.com/api/mcp/asset/fbdae112-351d-41b4-b465-dfd07cfb2130" alt="" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="/assets/photo2.png" alt="" className="absolute inset-0 w-full h-full object-cover" />
             </div>
           </div>
 
