@@ -142,7 +142,7 @@ function ProjectRow({ section }: { section: typeof projects[0] }) {
       <div className="flex flex-1 flex-col gap-8 items-start min-w-0">
         {section.items.map((item, i) => (
           <div key={i} className="flex flex-col gap-2 items-start w-full">
-            <p className="font-[Inter] font-bold text-[#d3c6a5] text-lg leading-tight whitespace-nowrap">{item.client}</p>
+            <p className="font-[Inter] font-bold text-[#d3c6a5] text-lg leading-tight">{item.client}</p>
             <p className="font-[Bricolage_Grotesque] font-bold text-white text-2xl leading-tight">{item.title}</p>
             {'description' in item && item.description && (
               <p className="font-[Inter] font-normal text-white text-lg leading-7 w-full">{item.description}</p>
@@ -382,7 +382,7 @@ export default function App() {
           {/* Projects */}
           <FadeIn className="bg-[#2a2c24] flex flex-col gap-8 items-start p-10 rounded-[32px] w-full">
             <div className="lg:px-[124px] w-full">
-              <p className="font-[Bricolage_Grotesque] font-bold text-white text-[32px] leading-tight whitespace-nowrap">
+              <p className="font-[Bricolage_Grotesque] font-bold text-white text-[32px] leading-tight">
                 My experience
               </p>
             </div>
