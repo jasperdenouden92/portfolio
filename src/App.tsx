@@ -134,7 +134,7 @@ function ProjectRow({ section }: { section: typeof projects[0] }) {
       ref={ref}
       className={`relative z-10 flex flex-col lg:flex-row lg:gap-12 lg:items-start w-full transition-all duration-500 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
     >
-      <div className="flex items-center justify-start lg:justify-center w-full lg:w-[76px] lg:shrink-0 lg:bg-[#2a2c24] mb-4 lg:mb-0">
+      <div className="flex items-center justify-start lg:justify-center w-full lg:w-[76px] lg:shrink-0 lg:bg-[#2a2c24] mb-8 lg:mb-0">
         <div className="bg-white flex items-start px-3 py-2 rounded-full">
           <p className="font-[Inter] font-bold text-[#2a2c24] text-sm leading-tight whitespace-nowrap">{section.year}</p>
         </div>
