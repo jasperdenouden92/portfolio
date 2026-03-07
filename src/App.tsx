@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef, type ReactNode } from 'react'
 import './App.css'
 
-type Fact = { title: string; body: string; emoji: string; link?: string }
+type Fact = { title: string; body: string; emoji: string; link?: string; linkLabel?: string }
 const facts: Fact[] = [
-  { title: "I'm a board game addict.", body: "Over 100 board games in the house. And yes, I actually play some of them.", emoji: "🎲" },
+  { title: "I'm a board game addict.", body: "Over 100 board games in the house. And yes, I take it very seriously: I track ratings, stats, scores, and more.", emoji: "🎲", link: "https://boardgamegeek.com/collection/user/jasperdenouden?subtype=boardgame&own=1&ff=1", linkLabel: "Check my collection →" },
   { title: "I try to ace the padel court twice a week.", body: "The ambition is consistent. The aces, slightly less so.", emoji: "🎾" },
   { title: "This site? Designed by me. Coded by me.", body: "I designed it myself. The coding part went with a little help from AI. Okay, maybe more than a little.", emoji: "🤖" },
   { title: "A trip without a castle is an incomplete trip.", body: "I love travelling, like everyone does. But a journey only feels truly done when there's a castle on the itinerary.", emoji: "🏰" },
@@ -11,6 +11,7 @@ const facts: Fact[] = [
   { title: "My favourite part of the design process? Workshops.", body: "Facilitating creative sessions is where I truly come alive. With the design sprint as the absolute highlight.", emoji: "⚡" },
   { title: "My favourite Pokémon? Gengar.", body: "Though only because my cats aren't eligible.", emoji: "👻" },
   { title: "A house full of women.", body: "I'm a girl dad of two. Outnumbered, and perfectly okay with it.", emoji: "👧" },
+  { title: "I'd love to get a dog again.", body: "Just waiting until my kids are old enough to actually take it for a walk.", emoji: "🐕" },
   { title: "In the car: De Grote Podcastlas.", body: "A Dutch podcast that makes every commute genuinely enjoyable.", emoji: "🎙️", link: "https://www.grotepodcastlas.nl/" },
 ]
 
@@ -232,28 +233,35 @@ export default function App() {
         {aboutMounted && (
           <div className="fixed inset-3 z-50 flex items-stretch pointer-events-none">
             <div className="hidden lg:block w-[360px] shrink-0" />
-            <div className={`flex-1 bg-white rounded-[32px] pointer-events-auto overflow-y-auto lg:ml-3 relative transition-all duration-400 ease-out ${showAbout ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
-              <button
-                onClick={closeAbout}
-                className="absolute top-6 right-6 bg-[#f4efe3] flex items-center justify-center w-12 h-12 rounded-full border-none cursor-pointer hover:opacity-70 transition-opacity z-10"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M18 6L6 18M6 6l12 12" stroke="#2a2c24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              <div className="flex h-full">
+            <div className={`flex-1 bg-white rounded-[32px] pointer-events-auto overflow-y-auto lg:ml-3 transition-all duration-400 ease-out ${showAbout ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
+              <div className="flex min-h-full">
                 <div className="w-px bg-[#f4efe3] shrink-0 my-8 hidden lg:block" />
-                <div className="flex flex-col gap-10 p-12 pt-20 flex-1">
+                <div className="flex flex-col gap-10 px-12 pb-12 pr-6 pt-8 flex-1">
+                  <button
+                    onClick={closeAbout}
+                    className="sticky top-6 self-end bg-[#f4efe3] flex items-center justify-center w-12 h-12 rounded-full border-none cursor-pointer hover:opacity-70 transition-opacity z-10 shrink-0"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <path d="M18 6L6 18M6 6l12 12" stroke="#2a2c24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+                  <div className="flex flex-col gap-10 pr-16 -mt-[72px] pt-[72px]">
                   <div className="flex flex-col gap-3">
                     <p className="font-[Bricolage_Grotesque] font-bold text-[#2a2c24] text-2xl leading-tight">About me</p>
                     <p className="font-[Inter] text-[#2a2c24] text-lg leading-7">
-                      When I take a small break from this world of design, I spend my time playing board and video games, reading books, writing, watching tons of movies & TV series and drink special beers in distant countries.
+                      I'm a digital product designer based near Rotterdam and co-founder of Strakzat, a digital product studio. My heart beats a little faster when I get to sink my teeth into a complex problem and turn it into something that actually works as a digital product.
+                    </p>
+                    <p className="font-[Inter] text-[#2a2c24] text-lg leading-7">
+                      When I'm not designing, you'll find me gaming, building Lego, playing board games, or hanging out with my family and friends.
                     </p>
                   </div>
                   <div className="flex flex-col gap-3">
                     <p className="font-[Bricolage_Grotesque] font-bold text-[#2a2c24] text-2xl leading-tight">My approach</p>
                     <p className="font-[Inter] text-[#2a2c24] text-lg leading-7">
-                      I believe great products are built at the intersection of user insight and business strategy. I bring both: facilitating sprints, running research, and crafting interfaces that actually get used.
+                      I can work across the full digital product design spectrum, but where I'm at my strongest is bringing stakeholders together around a single product vision and translating that into UX solutions that have real impact, for users and for the business.
+                    </p>
+                    <p className="font-[Inter] text-[#2a2c24] text-lg leading-7">
+                      Working human-centered is something I take seriously. That means really digging into the needs and desires of both users and the business, and building a digital product around those insights. I validate early, often, and with purpose, to make sure what gets built actually lands. Efficient, pragmatic, and effective.
                     </p>
                   </div>
                   <div className="flex flex-col gap-5">
@@ -265,7 +273,7 @@ export default function App() {
                           <p className="font-[Inter] text-[#d3c6a5] text-base leading-6">
                             {facts[factIndex].body}
                             {facts[factIndex].link && (
-                              <a href={facts[factIndex].link} target="_blank" rel="noopener noreferrer" className="ml-1 text-[#f4efe3] font-semibold hover:opacity-70 transition-opacity">grotepodcastlas.nl →</a>
+                              <a href={facts[factIndex].link} target="_blank" rel="noopener noreferrer" className="ml-1 text-[#f4efe3] font-semibold hover:opacity-70 transition-opacity">{facts[factIndex].linkLabel ?? 'grotepodcastlas.nl →'}</a>
                             )}
                           </p>
                         </div>
@@ -281,6 +289,7 @@ export default function App() {
                         </svg>
                       </button>
                     </div>
+                  </div>
                   </div>
                 </div>
               </div>
