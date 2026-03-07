@@ -237,7 +237,7 @@ export default function App() {
         {aboutMounted && (
           <div className="fixed inset-3 z-50 flex items-stretch pointer-events-none">
             <div className="hidden lg:block w-[360px] shrink-0" />
-            <div className={`relative flex-1 bg-white rounded-[32px] pointer-events-auto overflow-y-auto lg:ml-3 transition-all duration-400 ease-out ${showAbout ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
+            <div className={`relative flex-1 bg-white rounded-[32px] pointer-events-auto overflow-y-auto overflow-x-hidden lg:ml-3 transition-all duration-400 ease-out ${showAbout ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
               <div className="flex min-h-full">
                 <div className="w-px bg-[#f4efe3] shrink-0 my-8 hidden lg:block" />
                 <div className="flex flex-col gap-10 px-6 lg:px-12 pb-12 lg:pr-6 pt-8 flex-1">
@@ -271,8 +271,8 @@ export default function App() {
                   <div className="flex flex-col gap-5">
                     <p className="font-[Bricolage_Grotesque] font-bold text-[#2a2c24] text-2xl leading-tight">Random facts about me</p>
                     <div className="bg-[#2a2c24] rounded-[24px] p-8 flex flex-col gap-6">
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex flex-col gap-2">
+                      <div className="flex items-start justify-between gap-4 w-full">
+                        <div className="flex flex-col gap-2 flex-1 min-w-0">
                           <p className="font-[Bricolage_Grotesque] font-bold text-white text-xl leading-tight">{facts[factIndex].title}</p>
                           <p className="font-[Inter] text-[#d3c6a5] text-base leading-6">
                             {facts[factIndex].body}
@@ -285,7 +285,7 @@ export default function App() {
                           {facts[factIndex].emoji}
                         </div>
                       </div>
-                      <button onClick={regenerateFact} className="bg-[#f4efe3] flex gap-2 items-center px-4 py-2.5 rounded-full self-start cursor-pointer border-none hover:opacity-80 transition-opacity">
+                      <button onClick={regenerateFact} className="bg-[#f4efe3] flex gap-2 items-center justify-center px-4 py-2.5 rounded-full w-full cursor-pointer border-none hover:opacity-80 transition-opacity">
                         <span className="font-[Bricolage_Grotesque] font-bold text-[#2a2c24] text-base leading-tight">Regenerate</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                           <path d="M1 4v6h6M23 20v-6h-6" stroke="#2a2c24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
