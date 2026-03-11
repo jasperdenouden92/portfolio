@@ -17,6 +17,16 @@ const facts: Fact[] = [
 
 const projects = [
   {
+    year: '2026',
+    items: [
+      {
+        client: 'SPIE',
+        title: 'Pulse Core',
+        description: 'Redesigning Pulse Core, SPIE\'s building management software and one of its most impactful products. Focused on giving users clearer guidance on where to look and reducing the clicks needed to get things done.',
+      },
+    ],
+  },
+  {
     year: '2025',
     items: [
       {
